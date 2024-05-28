@@ -286,11 +286,25 @@ config.nvim_pqf = function()
     end
     pqf.setup({
         signs = {
-            error = " " .. icons.diagnostics.error,
-            warning = " " .. icons.diagnostics.warn,
-            info = " " .. icons.diagnostics.info,
-            hint = " " .. icons.diagnostics.hint,
+            error = {
+                text = icons.diagnostics.error,
+                hl = "DiagnosticSignError",
+            },
+            warning = {
+                text = icons.diagnostics.warn,
+                hl = "DiagnosticSignWarn",
+            },
+            info = {
+                text = icons.diagnostics.info,
+                hl = "DiagnosticSignInfo",
+            },
+            hint = {
+                text = icons.diagnostics.hint,
+                hl = "DiagnosticSignHint",
+            },
         },
+        show_multiple_lines = true,
+        max_filename_length = 0,
     })
 end
 
