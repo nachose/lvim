@@ -400,10 +400,11 @@ M.get_statusline = function()
     }
     local statistic = {
         provider = function()
+            local wc = vim.fn.wordcount()
             if _G.LVIM_MODE == "v" or _G.LVIM_MODE == "V" then
-                return " " .. vim.fn.wordcount().visual_words .. "/" .. vim.fn.wordcount().words
+                return " " .. (wc.visual_words or 0) .. "/" .. (wc.words or 0)
             else
-                return " " .. vim.fn.wordcount().words
+                return " " .. (wc.words or 0)
             end
         end,
         hl = { fg = colors.teal_01, bold = true },
