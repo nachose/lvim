@@ -98,6 +98,17 @@ config.fzf_lua = function()
         return
     end
     fzf_lua.setup({
+        defaults = {
+            multiline = 2,
+        },
+        fzf_opts = {
+            ["--highlight-line"] = true,
+            ["--border"] = "none",
+            ["--layout"] = "reverse",
+            ["--height"] = "100%",
+            ["--info"] = "inline-right",
+            ["--ansi"] = true,
+        },
         fzf_colors = {
             ["fg"] = { "fg", "FzfLuaLine" },
             ["bg"] = { "bg", "FzfLuaNormal" },

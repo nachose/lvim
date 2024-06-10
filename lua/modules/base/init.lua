@@ -982,7 +982,7 @@ modules["folke/trouble.nvim"] = {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     cmd = "Trouble",
     keys = {
-        { "<C-c><C-v>", "<Cmd>TroubleToggle<CR>", desc = "Trouble" },
+        { "<C-c><C-v>", "<Cmd>Trouble diagnostics<CR>", desc = "Trouble" },
     },
     config = languages_config.trouble_nvim,
 }
@@ -1061,8 +1061,7 @@ modules["SmiteshP/nvim-navbuddy"] = {
     config = languages_config.nvim_navbuddy,
 }
 
--- modules["hedyhli/outline.nvim"] = {
-modules["lvim-tech/outline.nvim"] = {
+modules["hedyhli/outline.nvim"] = {
     commit = funcs.get_commit("outline.nvim", plugins_snapshot),
     event = {
         "BufRead",
