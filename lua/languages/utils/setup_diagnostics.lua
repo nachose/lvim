@@ -73,15 +73,8 @@ M.init_diagnostics = function()
             if choice == "Enable" then
                 local buffers = vim.api.nvim_list_bufs()
                 for _, bufnr in ipairs(buffers) do
-                    local clients = vim.lsp.get_clients(bufnr)
-                    if #clients > 0 then
-                        for _, client in ipairs(clients) do
-                            if vim.lsp.inlay_hint ~= nil and client.server_capabilities.inlayHintProvider then
-                                vim.lsp.inlay_hint.enable(true, { bufnr })
-                            end
-                        end
-                    else
-                        print("No LSP client associated with the buffer")
+                    if vim.lsp.inlay_hint ~= nil then
+                        vim.lsp.inlay_hint.enable(true, { bufnr })
                     end
                 end
                 _G.LVIM_SETTINGS["inlayhint"] = true
@@ -89,15 +82,8 @@ M.init_diagnostics = function()
             elseif choice == "Disable" then
                 local buffers = vim.api.nvim_list_bufs()
                 for _, bufnr in ipairs(buffers) do
-                    local clients = vim.lsp.get_clients(bufnr)
-                    if #clients > 0 then
-                        for _, client in ipairs(clients) do
-                            if vim.lsp.inlay_hint ~= nil and client.server_capabilities.inlayHintProvider then
-                                vim.lsp.inlay_hint.enable(false, { bufnr })
-                            end
-                        end
-                    else
-                        print("No LSP client associated with the buffer")
+                    if vim.lsp.inlay_hint ~= nil then
+                        vim.lsp.inlay_hint.enable(false, { bufnr })
                     end
                 end
                 _G.LVIM_SETTINGS["inlayhint"] = false
