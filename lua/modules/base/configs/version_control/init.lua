@@ -32,42 +32,13 @@ config.gitsigns_nvim = function()
         numhl = false,
         signcolumn = true,
         signs = {
-            add = {
-                hl = "GitSignsAdd",
-                text = icons.common.vline,
-                numhl = "GitSignsAddNr",
-                linehl = "GitSignsAddLn",
-            },
-            change = {
-                hl = "GitSignsChange",
-                text = icons.common.vline,
-                numhl = "GitSignsChangeNr",
-                linehl = "GitSignsChangeLn",
-            },
-            delete = {
-                hl = "GitSignsDelete",
-                text = icons.common.vline,
-                numhl = "GitSignsDeleteNr",
-                linehl = "GitSignsDeleteLn",
-            },
-            topdelete = {
-                hl = "GitSignsTopDelete",
-                text = icons.common.vline,
-                numhl = "GitSignsTopDeleteNr",
-                linehl = "GitSignsTopDeleteLn",
-            },
-            changedelete = {
-                hl = "GitSignsChangeDelete",
-                text = icons.common.vline,
-                numhl = "GitSignsChangeDeleteNr",
-                linehl = "GitSignsChangeDeleteLn",
-            },
-            untracked = {
-                hl = "GitSignsUntracked",
-                text = icons.common.vline,
-                numhl = "GitSignsUntrackedNr",
-                linehl = "GitSignsUntrackedLn",
-            },
+
+            untracked = { text = icons.common.vline },
+            changedelete = { text = icons.common.vline },
+            topdelete = { text = icons.common.vline },
+            delete = { text = icons.common.vline },
+            change = { text = icons.common.vline },
+            add = { text = icons.common.vline },
         },
         linehl = false,
     })
