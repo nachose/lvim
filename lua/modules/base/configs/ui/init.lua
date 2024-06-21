@@ -318,6 +318,21 @@ config.noice_nvim = function()
                     cursorline = false,
                 },
             },
+            cmdline_input = {
+                border = {
+                    style = { " ", " ", " ", " ", " ", " ", " ", " " },
+                    padding = { 0, 1 },
+                },
+                win_options = {
+                    winhighlight = {
+                        Normal = "NoiceBody",
+                        FloatBorder = "NoiceBorder",
+                        IncSearch = "IncSearch",
+                        Search = "Search",
+                    },
+                    cursorline = false,
+                },
+            },
             confirm = {
                 backend = "popup",
                 relative = "editor",
