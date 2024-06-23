@@ -31,8 +31,8 @@ config.gitsigns_nvim = function()
         },
         numhl = false,
         signcolumn = true,
+        signs_staged_enable = false,
         signs = {
-
             untracked = { text = icons.common.vline },
             changedelete = { text = icons.common.vline },
             topdelete = { text = icons.common.vline },
@@ -69,7 +69,7 @@ config.gitsigns_nvim = function()
     vim.keymap.set("n", "<C-c>b", function()
         vim.cmd("GitSignsToggleLineBlame")
     end, { noremap = true, silent = true, desc = "GitSignsToggleLineBlame" })
-    vim.keymap.set("n", "<C-c>m", function()
+    vim.keymap.set("n", "<C-c>k", function()
         vim.cmd("GitSignsBlameLine")
     end, { noremap = true, silent = true, desc = "GitSignsBlameLine" })
 end
