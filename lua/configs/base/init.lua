@@ -122,7 +122,7 @@ end
 
 configs["base_options"] = function()
     options.global()
-    vim.g.indent_blankline_char = "▏"
+    -- vim.g.indent_blankline_char = "▏"
     vim.g.gitblame_enabled = 0
     vim.g.gitblame_highlight_group = "CursorLine"
     pcall(function()
