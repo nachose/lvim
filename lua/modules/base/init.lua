@@ -177,16 +177,6 @@ modules["rafamadriz/friendly-snippets"] = {
     lazy = true,
 }
 
-modules["vhyrro/luarocks.nvim"] = {
-    commit = funcs.get_commit("luarocks.nvim", plugins_snapshot),
-    opts = {
-        rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
-    },
-    priority = 10000,
-    config = true,
-    lazy = true,
-}
-
 -- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 -- UI -----------------------------------------------------------
 -- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -678,7 +668,6 @@ modules["chrisgrieser/nvim-various-textobjs"] = {
 modules["NTBBloodbath/rest.nvim"] = {
     commit = funcs.get_commit("rest.nvim", plugins_snapshot),
     ft = "http",
-    dependencies = { "luarocks.nvim" },
     keys = {
         {
             "<Leader>tr",
