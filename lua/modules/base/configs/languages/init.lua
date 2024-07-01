@@ -173,15 +173,35 @@ config.nvim_lsp_file_operations = function()
     })
 end
 
-config.inc_rename_nvim = function()
-    local inc_rename_status_ok, inc_rename = pcall(require, "inc_rename")
-    if not inc_rename_status_ok then
+config.nvim_rip_substitute = function()
+    local nvim_rip_substitute_status_ok, nvim_rip_substitute = pcall(require, "rip-substitute")
+    if not nvim_rip_substitute_status_ok then
         return
     end
-    inc_rename.setup()
-    vim.keymap.set("n", "gE", function()
-        return ":IncRename " .. vim.fn.expand("<cword>")
-    end, { expr = true, desc = "IncRename" })
+    nvim_rip_substitute.setup({
+        popupWin = {
+            title = "Replace",
+            border = "single",
+            matchCountHlGroup = "Keyword",
+            noMatchHlGroup = "ErrorMsg",
+            hideSearchReplaceLabels = false,
+            position = "bottom",
+        },
+        keymaps = {
+            confirm = "<CR>",
+            abort = "q",
+            prevSubst = "<Up>",
+            nextSubst = "<Down>",
+            insertModeConfirm = "<C-CR>",
+        },
+        incrementalPreview = {
+            matchHlGroup = "IncSearch",
+            rangeBackdrop = {
+                enabled = true,
+                blend = 40,
+            },
+        },
+    })
 end
 
 config.glance_nvim = function()

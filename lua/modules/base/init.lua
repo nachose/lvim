@@ -950,12 +950,19 @@ modules["antosha417/nvim-lsp-file-operations"] = {
     config = languages_config.nvim_lsp_file_operations,
 }
 
-modules["smjonas/inc-rename.nvim"] = {
-    commit = funcs.get_commit("inc-rename.nvim", plugins_snapshot),
-    event = {
-        "BufRead",
+modules["chrisgrieser/nvim-rip-substitute"] = {
+    cmd = "RipSubstitute",
+    keys = {
+        {
+            "<leader>e",
+            function()
+                require("rip-substitute").sub()
+            end,
+            mode = { "n", "x" },
+            desc = "Rip substitute",
+        },
     },
-    config = languages_config.inc_rename_nvim,
+    config = languages_config.nvim_rip_substitute,
 }
 
 modules["DNLHC/glance.nvim"] = {
