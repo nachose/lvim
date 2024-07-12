@@ -8,6 +8,7 @@ if file_content ~= nil then
     plugins_snapshot = file_content
 end
 
+
 -- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 -- DEPENDENCIES -------------------------------------------------
 -- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -67,9 +68,14 @@ modules["folke/twilight.nvim"] = {
     lazy = true,
 }
 
+-- modules["nvim-telescope/telescope-fzf-native.nvim"] = {
+--     commit = funcs.get_commit("telescope-fzf-native.nvim", plugins_snapshot),
+--     build = "make",
+--     lazy = true,
+-- }
 modules["nvim-telescope/telescope-fzf-native.nvim"] = {
     commit = funcs.get_commit("telescope-fzf-native.nvim", plugins_snapshot),
-    build = "make",
+    build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
     lazy = true,
 }
 
@@ -665,23 +671,23 @@ modules["chrisgrieser/nvim-various-textobjs"] = {
     config = editor_config.nvim_various_textobjs,
 }
 
-modules["NTBBloodbath/rest.nvim"] = {
-    commit = funcs.get_commit("rest.nvim", plugins_snapshot),
-    ft = "http",
-    keys = {
-        {
-            "<Leader>tr",
-            "<cmd>Rest run<cr>",
-            desc = "RestNvim Run",
-        },
-        {
-            "<Leader>tl",
-            "<cmd>Rest last<cr>",
-            desc = "RestNvim Run Last",
-        },
-    },
-    config = editor_config.rest_nvim,
-}
+-- modules["NTBBloodbath/rest.nvim"] = {
+--     commit = funcs.get_commit("rest.nvim", plugins_snapshot),
+--     ft = "http",
+--     keys = {
+--         {
+--             "<Leader>tr",
+--             "<cmd>Rest run<cr>",
+--             desc = "RestNvim Run",
+--         },
+--         {
+--             "<Leader>tl",
+--             "<cmd>Rest last<cr>",
+--             desc = "RestNvim Run Last",
+--         },
+--     },
+--     config = editor_config.rest_nvim,
+-- }
 
 modules["arjunmahishi/flow.nvim"] = {
     commit = funcs.get_commit("flow.nvim", plugins_snapshot),
